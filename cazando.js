@@ -1,5 +1,5 @@
 let canvas=document.getElementById("areaJuego");
-let ctx = canvas.getContex("2d");
+let ctx = canvas.getContext("2d");
 
 function graficarGato(){
     ctx.fillstyle="black";
