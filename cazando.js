@@ -11,6 +11,8 @@ let gatoY = (canvas.height - ALTO_GATO) / 2;
 let comidaX = 0;
 let comidaY = 0;
 let puntos=0;
+let tiempo=10;
+let intervalos;
 
 
 function graficarGato(){
@@ -27,6 +29,7 @@ function graficarComida() {
 function iniciarJuego() {
     graficarGato();
     graficarComida();
+    intervalos=setInterval(restarTiempo,1000);
 }
 
 
@@ -89,4 +92,11 @@ function detectaColicion(){
         graficarGato();
         graficarComida();
     }
+}
+
+function restarTiempo(){
+    
+    tiempo=tiempo-1;
+    mostrarEnSpan("tiempo",tiempo);
+    
 }
