@@ -86,6 +86,11 @@ function detectaColicion(){
         alert("EL GATO COMIO!");
         puntos=puntos + 1;
         mostrarEnSpan("puntos", puntos);
+        if(puntos == 6){
+             alert("¡GANASTE!");
+            clearInterval(intervalos);
+        
+        }
         comidaX = generarAleatorio(0, canvas.width - ANCHO_COMIDA);
         comidaY = generarAleatorio(0, canvas.height - ALTO_COMIDA);
         limpiarCanvas();
@@ -99,4 +104,8 @@ function restarTiempo(){
     tiempo=tiempo-1;
     mostrarEnSpan("tiempo",tiempo);
     
+    if(tiempo == 0){
+        alert("GAME OVER");
+        clearInterval(intervalos);
+    }
 }
