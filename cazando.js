@@ -109,3 +109,25 @@ function restarTiempo(){
         clearInterval(intervalos);
     }
 }
+
+
+function reiniciarJuego(){
+    puntos = 0;
+    tiempo = 10;
+
+    mostrarEnSpan("puntos", puntos);
+    mostrarEnSpan("tiempo", tiempo);
+
+    clearInterval(intervalos);
+    intervalos = setInterval(restarTiempo, 1000);
+
+    gatoX = (canvas.width - ANCHO_GATO) / 2;
+    gatoY = (canvas.height - ALTO_GATO) / 2;
+
+    comidaX = generarAleatorio(0, canvas.width - ANCHO_COMIDA);
+    comidaY = generarAleatorio(0, canvas.height - ALTO_COMIDA);
+
+    limpiarCanvas();
+    graficarGato();
+    graficarComida();
+}
