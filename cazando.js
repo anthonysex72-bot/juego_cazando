@@ -6,3 +6,18 @@ function graficarGato(){
     ctx.fillRect(200,200,100,100);
 }
 
+function graficarComida() {
+
+    ctx.fillStyle = "red";
+
+    ctx.fillRect(0, 0, 50, 50);
+
+}
+
+function iniciarJuego() {
+
+    graficarGato();
+
+    graficarComida();
+
+}
