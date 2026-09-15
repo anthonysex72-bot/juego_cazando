@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="cazando.css">
 </head>
 
-<body onload="iniciarJuego()">
+<body>
 
     <div class="contenedor">
 
@@ -35,6 +35,22 @@
         <div class="zona-juego">
 
             <canvas id="areaJuego" width="2000" height="700"></canvas>
+
+            <audio id="musicaFondo" loop>
+              <source src="musica_fondo.mp3" type="audio/mpeg">
+            </audio>
+
+            <audio id="musicaVictoria">
+              <source src="victoria.mp3" type="audio/mpeg">
+            </audio>
+
+            <audio id="musicaDerrota">
+              <source src="derrota.mp3" type="audio/mpeg">
+            </audio>
+
+            <audio id="sonidoComer">
+              <source src="comer.mp3" type="audio/mpeg">
+            </audio>
 
             <p id="mensaje"></p>
 

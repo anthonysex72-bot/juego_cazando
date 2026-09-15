@@ -1,6 +1,11 @@
 let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
 
+let musicaFondo = document.getElementById("musicaFondo");
+let musicaVictoria = document.getElementById("musicaVictoria");
+let musicaDerrota = document.getElementById("musicaDerrota");
+let sonidoComer = document.getElementById("sonidoComer");
+
 
 const ALTO_GATO = 80;
 const ANCHO_GATO = 80;
@@ -293,6 +298,8 @@ function iniciarJuego() {
 
     juegoActivo = true;
     mostrarEnSpan();
+    musicaFondo.currentTime = 0;
+    musicaFondo.play();
 
     comidaX = generarAleatorio(
         0,
@@ -464,6 +471,8 @@ function detectaColicion() {
         gatoY + ALTO_GATO > comidaY &&
         gatoY < comidaY + ALTO_COMIDA
     ) {
+        sonidoComer.currentTime = 0;
+        sonidoComer.play();
 
         puntos = puntos + 1;
 
@@ -478,6 +487,12 @@ function detectaColicion() {
             juegoActivo = false;
 
             clearInterval(intervalos);
+
+            musicaFondo.pause();
+            musicaFondo.currentTime = 0;
+
+            musicaVictoria.currentTime = 0;
+            musicaVictoria.play();
 
             mostrarMensaje(
                  "🏆 ¡GANASTE! 🏆\nATRAPASTE\n6\nOBJETOS!"
@@ -525,6 +540,12 @@ function restarTiempo() {
 
         clearInterval(intervalos);
 
+        musicaFondo.pause();
+        musicaFondo.currentTime = 0;
+
+        musicaDerrota.currentTime = 0;
+        musicaDerrota.play();
+
         mostrarMensaje(
             "💀 GAME OVER 💀\nPRESIONA ENTER\n🍎 REINICIAR 🍎"
         );
@@ -543,6 +564,8 @@ function reiniciarJuego() {
     tiempo = tiempoInicial;
 
     juegoActivo = true;
+    musicaFondo.currentTime = 0;
+    musicaFondo.play();
 
 
     mostrarEnSpan(
