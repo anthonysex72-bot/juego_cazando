@@ -7,11 +7,11 @@ let musicaDerrota = document.getElementById("musicaDerrota");
 let sonidoComer = document.getElementById("sonidoComer");
 
 
-const ALTO_GATO = 45;
-const ANCHO_GATO = 45;
+const ALTO_GATO = 80;
+const ANCHO_GATO = 80;
 
-const ALTO_COMIDA = 25;
-const ANCHO_COMIDA = 25;
+const ALTO_COMIDA = 45;
+const ANCHO_COMIDA = 45;
 
 
 let gatoX = (canvas.width - ANCHO_GATO) / 2;
