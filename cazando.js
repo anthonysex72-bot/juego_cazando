@@ -7,8 +7,8 @@ let musicaDerrota = document.getElementById("musicaDerrota");
 let sonidoComer = document.getElementById("sonidoComer");
 
 
-const ALTO_GATO = 80;
-const ANCHO_GATO = 80;
+const ALTO_GATO = 60;
+const ANCHO_GATO = 60;
 
 const ALTO_COMIDA = 45;
 const ANCHO_COMIDA = 45;
@@ -21,7 +21,7 @@ let comidaX = 0;
 let comidaY = 0;
 
 let puntos = 0;
-let tiempoInicial=20;
+let tiempoInicial=10;
 let tiempo = tiempoInicial;
 
 
@@ -37,7 +37,7 @@ let juegoActivo = true;
 function graficarGato() {
 
     // Cuerpo
-    ctx.fillStyle = "#222";
+    ctx.fillStyle = "#b20d0d";
 
     ctx.beginPath();
 
@@ -53,7 +53,7 @@ function graficarGato() {
 
 
     // Cabeza
-    ctx.fillStyle = "#333";
+    ctx.fillStyle = "#3b0606";
 
     ctx.beginPath();
 
@@ -69,7 +69,7 @@ function graficarGato() {
 
 
     // Oreja izquierda
-    ctx.fillStyle = "#444";
+    ctx.fillStyle = "#e1b3b3";
 
     ctx.beginPath();
 
@@ -93,7 +93,7 @@ function graficarGato() {
 
     // Ojos
 
-    ctx.fillStyle = "#7cff00";
+    ctx.fillStyle = "#0b0b0b";
 
     ctx.beginPath();
 
@@ -140,7 +140,7 @@ function graficarGato() {
 
     // Cola
 
-    ctx.strokeStyle = "#444";
+    ctx.strokeStyle = "#303c8f";
 
     ctx.lineWidth = 10;
 
@@ -317,7 +317,7 @@ function iniciarJuego() {
 
     intervalos = setInterval(
         restarTiempo,
-        1000
+        5000
     );
 }
 
@@ -547,7 +547,7 @@ function restarTiempo() {
         musicaDerrota.play();
 
         mostrarMensaje(
-            "💀 GAME OVER 💀\nPRESIONA ENTER\n🍎 REINICIAR 🍎"
+            "💀 PERDISTE 💀\nPRESIONA ENTER\n🍎 REINICIAR 🍎"
         );
     }
 }
@@ -602,7 +602,7 @@ function reiniciarJuego() {
 
     intervalos = setInterval(
         restarTiempo,
-        1000
+        2000
     );
 
 
@@ -633,4 +633,11 @@ function mostrarEnSpan(idSpan, valor) {
         document.getElementById(idSpan);
 
     componente.textContent = valor;
+}
+
+
+Function desaparecerPersonage(){
+    
+    reiniciarJuego();
+    clearRect(gatoX,gatoY);
 }
