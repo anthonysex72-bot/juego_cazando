@@ -7,8 +7,8 @@ let musicaDerrota = document.getElementById("musicaDerrota");
 let sonidoComer = document.getElementById("sonidoComer");
 
 
-const ALTO_GATO = 60;
-const ANCHO_GATO = 60;
+const ALTO_GATO = 80;
+const ANCHO_GATO = 80;
 
 const ALTO_COMIDA = 45;
 const ANCHO_COMIDA = 45;
@@ -635,9 +635,3 @@ function mostrarEnSpan(idSpan, valor) {
     componente.textContent = valor;
 }
 
-
-Function desaparecerPersonage(){
-    
-    reiniciarJuego();
-    clearRect(gatoX,gatoY);
-}
